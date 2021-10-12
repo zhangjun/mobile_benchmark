@@ -117,6 +117,7 @@ std::shared_ptr<PaddlePredictor> CreatorPredictor(const std::string& model_file,
   config.set_model_from_file(model_file);
   // config.set_power_mode(static_cast<paddle::lite_api::PowerMode>(power_mode));
   config.set_threads(thread_num);
+  config.set_metal_use_mps(true);
   config.set_metal_lib_path(metal_lib);
   // 2. Create PaddlePredictor by MobileConfig
   std::shared_ptr<PaddlePredictor> predictor =
