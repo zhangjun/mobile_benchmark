@@ -219,6 +219,13 @@ std::string Result() {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initPredictor];
+    
+    // run benchmark when start app
+    std::string result = Result();
+    NSString* data = [NSString stringWithFormat:@"%s", result.c_str()];
+    NSLog(@"results: %@", data);
+    self.resultsView.text = data;
+    
 }
 
 - (void)initPredictor {
